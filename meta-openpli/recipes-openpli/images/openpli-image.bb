@@ -8,6 +8,7 @@ DEPENDS += " \
 
 IMAGE_INSTALL = "\
 	${ROOTFS_PKGMANAGE} \
+	${@["openpli-udev-conf udev-extraconf", "modutils-loadscript"][(d.getVar('VIRTUAL-RUNTIME_dev_manager') == 'busybox-mdev')]} \
 	3rd-party-feed-configs \
 	avahi-daemon \
 	ca-certificates \
@@ -19,7 +20,6 @@ IMAGE_INSTALL = "\
 	fakelocale \
 	glibc-binary-localedata-en-gb \
 	kernel-params \
-	modutils-loadscript \
 	nfs-utils-client \
 	openpli-bootlogo \
 	openssh-sftp-server \
